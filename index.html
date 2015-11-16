@@ -35,7 +35,7 @@
 <p>2）走路慢分为drive</p>
 
 <ul>
-<li>maxabs minabs 因手机放在裤子兜里姿势不用而形成不同大小分量</li>
+<li>maxabs minabs 因手机放在裤子兜里姿势不用而形成不同大小分量 引入了方向的信息 最大最小 分量因姿势而不同</li>
 <li>maxabs minabs 为噪音特征 但是去掉又使accuracy下降</li>
 <li>解决：</li>
 <li>走路慢至少要分为walkriderun那边</li>
@@ -44,6 +44,16 @@
 <li>试试gravity 分解出来</li>
 <li>试试只用模 norm大窗口</li>
 </ul>
+
+<h1>
+<a id="drivesitwalkrunride" class="anchor" href="#drivesitwalkrunride" aria-hidden="true"><span class="octicon octicon-link"></span></a>drivesit|walkrunride</h1>
+
+<p>model:rf
+fea : mod only, no fft no absmin absmax  </p>
+
+<p>fea: mod ,mod_fft</p>
+
+<p>把踱步,drive sit 分到一边 用acc 震动 慢慢踱步和sitting可以分开 但是和driving持续小幅度震动 分不开 。而可以用speed分开慢慢踱步和driving</p>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/2877992943/Real-test-phase-Nov-14">Real-test-phase-nov-14</a> is maintained by <a href="https://github.com/2877992943">2877992943</a>.</span>
