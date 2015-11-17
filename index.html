@@ -78,8 +78,22 @@ stroll|driveSit
 手机放包里  走的快 ---predict rid   走的慢 drive</p>
 
 <ul>
-<li>fea mod only test 1, wholeset accuracy 0.92   需要更多stroll的数据</li>
-<li>fea modfft only   wholeset accuracy 0.91~0.93</li>
+<li>fea mod only test 1, wholeset accuracy 0.92   需要更多stroll的训练数据 先用 ds|rrwstrol分  分到ds的为训练数据</li>
+<li>fea modfft only   wholeset accuracy 0.91~0.93
+先用 ds|rrwstrol分  分到drivesit的为stroll训练数据 不把分为drivesit的stroll数据放到walkridrun训练集合中</li>
+</ul>
+
+<h1>
+<a id="ridwalkrun" class="anchor" href="#ridwalkrun" aria-hidden="true"><span class="octicon octicon-link"></span></a>rid|walkrun</h1>
+
+<p>是否去掉absmin absmax</p>
+
+<ul>
+<li>fea mod only
+wholeset 0.89~0.91</li>
+<li>fea mod_fft only
+wholeset 0.83~0.85
+去掉absmin absmax 只用mod</li>
 </ul>
 
       <footer class="site-footer">
