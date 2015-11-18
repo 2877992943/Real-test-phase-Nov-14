@@ -48,7 +48,8 @@
 <h1>
 <a id="drivesitwalkrunride" class="anchor" href="#drivesitwalkrunride" aria-hidden="true"><span class="octicon octicon-link"></span></a>drivesit|walkrunride</h1>
 
-<p>model:rf</p>
+<p>model:rf
+problem, slowWalk 分到drivesit那边  又不能把这加到trainset影响正常的走路</p>
 
 <h2>
 <a id="方案1drivesitwalkriderunstroll" class="anchor" href="#%E6%96%B9%E6%A1%881drivesitwalkriderunstroll" aria-hidden="true"><span class="octicon octicon-link"></span></a>方案1：driveSit|walkRideRunStroll</h2>
@@ -57,13 +58,13 @@
 
 <ul>
 <li><p>fea : mod only, no fft no absmin absmax<br>
-jiawei slow not good, 
-hengy me slow ok
-me very slow walk not ok
+jiawei slow,hengy slow walk-&gt;drivesit, 
+me slow walk-&gt;wakerunrid
+me very slow walk-&gt;drivesit
 trainset accuracy 0.99</p></li>
 <li><p>fea:  mod_fft only
 jiawei hengy me slow ok, 
-trainset accuracy 0.96</p></li>
+but trainset accuracy 0.96 NO GOOD</p></li>
 <li><p>fea: mod, mod_fft
 jiawei slow hengy slow not good 
 trainset 0.99</p></li>
@@ -80,13 +81,14 @@ stroll|driveSit
 <ul>
 <li>fea mod only test 1, wholeset accuracy 0.92   需要更多stroll的训练数据 先用 ds|rrwstrol分  分到ds的为训练数据</li>
 <li>fea modfft only   wholeset accuracy 0.91~0.93
-先用 ds|rrwstrol分  分到drivesit的为stroll训练数据 不把分为drivesit的stroll数据放到walkridrun训练集合中</li>
+先用 ds|rrwstrol分  分到drivesit的为stroll训练数据 
+不把分为drivesit的stroll数据放到walkridrun训练集合中</li>
 </ul>
 
 <h1>
 <a id="ridwalkrun" class="anchor" href="#ridwalkrun" aria-hidden="true"><span class="octicon octicon-link"></span></a>rid|walkrun</h1>
 
-<p>是否去掉absmin absmax</p>
+<p>是否去掉absmin absmax??</p>
 
 <ul>
 <li>fea mod only
@@ -94,6 +96,16 @@ wholeset 0.89~0.91</li>
 <li>fea mod_fft only
 wholeset 0.83~0.85
 去掉absmin absmax 只用mod</li>
+</ul>
+
+<h1>
+<a id="walkrun" class="anchor" href="#walkrun" aria-hidden="true"><span class="octicon octicon-link"></span></a>walk|run</h1>
+
+<ul>
+<li>fea mod only
+wholeset 0.98 0.97</li>
+<li>fea mod_fft only
+wholeset 0.92 0.91</li>
 </ul>
 
       <footer class="site-footer">
