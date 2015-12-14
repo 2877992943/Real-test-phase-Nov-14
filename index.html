@@ -135,17 +135,25 @@ drivesit:spin(坐着拿起手机)  notspin ,watch  notwatch
 stroll:spin  notspin   watch notwatch
 跑步：spin  notspin  notwatch</p>
 
-<p>磁场 坐着和地铁可以区分开  但是bus car 待定
+<p>磁场: 坐着和地铁可以区分开  但是bus car 待定
 不知能否用此优化骑车和走路
 problem to be solved:
 走路会识别成骑车，如何判断不是在骑车  不用速度的话</p>
 
 <p>仍存在的问题：
-公交 出租车 test-&gt;ride walk  not stroll
-walk 会认识是ride
+1)bus taxi test-&gt;ride walk  not stroll    已经解决
+2)walk 会认识是ride
+3)不知道gyro 有什么用
 方案：
-重新看ride walk   smooth3   smooth10的训练集里面能有drive smooth10？
-加到训练集里面在测试？ </p>
+重新看ride walk   smooth3   smooth10的训练集里面能有drive smooth10？  把smooth10Mod聚类聚出噪音点去掉
+加到训练集里面在测试？  fail</p>
+
+<p>仍存在问题：
+2)walk 会认识是ride   在看gyro magnetic
+3)不知道gyro 有什么用
+1）car bus 地铁 sit  magnetic 
+4） 跑下楼梯 分开？
+5)跑步 骑车 时候磁场不变？走路变  ？方向影响？</p>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/2877992943/Real-test-phase-Nov-14">Real-test-phase-nov-14</a> is maintained by <a href="https://github.com/2877992943">2877992943</a>.</span>
